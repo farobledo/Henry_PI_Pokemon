@@ -1,0 +1,73 @@
+body{
+  background-image: url("../images/esta.webp");
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  height: 70vh;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 50px;
+  border-radius: 10px;
+  
+}
+.form-container {
+  
+  height: 500px;
+}
+.form h1{
+  color: rgb(255, 255, 255);
+  margin-top: 2px;
+  padding-top: 2px;
+  margin-left: 130%;
+}
+.form-container form{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 80%;
+  width: 450px;
+  margin-left: 400px;
+ 
+}
+.input-stats {
+  display: flex;
+  gap: 40px;
+  height: 30px;
+  width: 450px;
+  
+  
+}
+.input-stats input {
+  height: 20px;
+  margin-bottom: 0;
+}
+
+.input-stats p {
+  align-content: flex-end;
+ margin-left: 20px;
+ margin-top: 0;
+  color: rgb(247, 0, 0);
+
+  width: 500px;
+  
+}
+.enviar {
+  color: blanchedalmond;
+  width: 200px;
+  height: 100px;
+  margin-left: 110px;
+  background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+  font-size: 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.enviar:hover {
+  background-image: linear-gradient(to top, #505285 0%, #585e92 12%, #65689f 25%, #7474b0 37%, #7e7ebb 50%, #8389c7 62%, #9795d4 75%, #a2a1dc 87%, #b5aee4 100%);
+}
+.dd {
+  cursor: pointer;
+  display: flex;
+}

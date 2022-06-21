@@ -1,0 +1,21 @@
+li{
+    list-style:none
+}
+.buttonPAG{
+    padding: 5px;
+    background-color: #fffffff8;
+    color: rgb(0, 0, 0);
+    border: none;
+    width: 30px;
+    border-radius: 3px;
+    transition: 0.4s;
+    cursor: pointer;
+}
+.buttonPAG:hover{
+    background-color: rgb(0, 0, 0);
+    color: #fffffff8;
+}
+.DD{
+    display: flex;
+    justify-content: center;
+}
