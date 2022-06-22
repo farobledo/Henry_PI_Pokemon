@@ -2,6 +2,7 @@ import { useForm } from "../../hooks/useForm";
 import Loader from "../Loader";
 import Message from "../Message";
 import "../../componentsCSS/createPokemon.css"
+import { Link } from "react-router-dom";
 //Url's validas para crear pokemones
 // https://assets.pokemon.com/assets/cms2/img/pokedex/full/150.png
 // https://assets.pokemon.com/assets/cms2/img/pokedex/full/063.png
@@ -27,55 +28,39 @@ const validationsForm = (form) => {
   let regexUrl = /^(https?:\/\/.*\.(?:png|jpg))/i;
   let regexStats = /^[0-9_-]{1,2}$/;
 
-  if (!form.name.trim()) {
-    errors.name = "The field Name is required";
-  } else if (!regexName.test(form.name.trim())) {
-    errors.name = "The Name field only accepts lowercase letters and 4 to 10 characters";
+  if (!regexName.test(form.name)) {
+    errors.name = "El nombre debe tener entre 4 y 10 caracteres";
   }
-
-  if (!form.hp.trim()) {
-    errors.hp = "HP field is required";
-  } else if (!regexStats.test(form.hp.trim())) {
-    errors.hp = "The HP field only accepts numbers from 0 to 100";
+  if (!regexUrl.test(form.img)) {
+    errors.img = "La url debe ser una imagen";
   }
-  if (!form.strength.trim()) {
-    errors.strength = "The Strength field is required";
-  } else if (!regexStats.test(form.strength.trim())) {
-    errors.strength =
-      "The Strength field only accepts numbers from 0 to 100";
+  if (!regexStats.test(form.hp)) {
+    errors.hp = "El hp debe tener entre 1 y 2 digitos";
   }
-
-  if (!form.defense.trim()) {
-    errors.defense = "The Defense field is required";
-  } else if (!regexStats.test(form.defense.trim())) {
-    errors.defense = "The Defense field only accepts numbers from 0 to 100";
+  if (!regexStats.test(form.strength)) {
+    errors.strength = "La fuerza debe tener entre 1 y 2 digitos";
+  }else if(form.strength > 100){
+    errors.strength = "La fuerza debe ser menor a 100";
+  }else if(form.strength < 100){
+    errors.strength = "La fuerza debe ser mayor a 100";
   }
-  if (!form.height.trim()) {
-    errors.height = "The Height field is required";
-  } else if (!regexStats.test(form.height.trim())) {
-    errors.height = "The Height field only accepts numbers from 0 to 100";
+  if (!regexStats.test(form.defense)) {
+    errors.defense = "La defensa debe tener entre 1 y 2 digitos";
   }
-  if (!form.speed.trim()) {
-    errors.speed = "The Speed field is required";
-  } else if (!regexStats.test(form.speed.trim())) {
-    errors.speed = "The Speed field only accepts numbers from 0 to 100";
+  if (!regexStats.test(form.height)) {
+    errors.height = "La altura debe tener entre 1 y 2 digitos";
   }
-  if (!form.weight.trim()) {
-    errors.weight = "The Weight field is required";
-  } else if (!regexStats.test(form.weight.trim())) {
-    errors.weight = "The Weight field only accepts numbers from 0 to 100";
+  if (!regexStats.test(form.speed)) {
+    errors.speed = "La velocidad debe tener entre 1 y 2 digitos";
   }
- 
-  if (!form.img.trim()) {
-    errors.img = "The Image field is required";
-  } else if (!regexUrl.test(form.img.trim())) {
-    errors.img = "The Image field only accepts valid URL's, example: hhtp://example.png/jpg";
+  if (!regexStats.test(form.weight)) {
+    errors.weight = "El peso debe tener entre 1 y 2 digitos";
   }
-
-
-
   return errors;
-};
+}
+
+ 
+
 
 
 const CreatePokemon = () => {
@@ -91,6 +76,8 @@ const CreatePokemon = () => {
 
   return (
     <div className="form">
+      {/* vamos hacer una ruta para ir al home */}
+     
       <h1>Crear</h1>
       <div className="form-container">
       <form onSubmit={handleSubmit}>
@@ -98,7 +85,7 @@ const CreatePokemon = () => {
         <input
           type="text"
           name="name"
-          placeholder="Write your name..."
+          placeholder="Nombre Pokemon..."
           onBlur={handleBlur}
           onChange={handleChange}
           value={form.name}
@@ -110,7 +97,7 @@ const CreatePokemon = () => {
         <input
           type="text"
           name="hp"
-          placeholder="Write your hp..."
+          placeholder="Escribe tu cv..."
           onBlur={handleBlur}
           onChange={handleChange}
           value={form.hp}
@@ -122,7 +109,7 @@ const CreatePokemon = () => {
         <input
           type="text"
           name="strength"
-          placeholder="Write your strength..."
+          placeholder="Fuerza ..."
           onBlur={handleBlur}
           onChange={handleChange}
           value={form.strength}
@@ -134,7 +121,7 @@ const CreatePokemon = () => {
         <input
           type="text"
           name="defense"
-          placeholder="Write your defense..."
+          placeholder="Defensa..."
           onBlur={handleBlur}
           onChange={handleChange}
           value={form.defense}
@@ -146,7 +133,7 @@ const CreatePokemon = () => {
         <input
           type="text"
           name="height"
-          placeholder="Write your height..."
+          placeholder="Altura..."
           onBlur={handleBlur}
           onChange={handleChange}
           value={form.height}
@@ -158,7 +145,7 @@ const CreatePokemon = () => {
         <input
           type="text"
           name="speed"
-          placeholder="Write your speed..."
+          placeholder="Velocidad..."
           onBlur={handleBlur}
           onChange={handleChange}
           value={form.speed}
@@ -170,7 +157,7 @@ const CreatePokemon = () => {
         <input
           type="text"
           name="weight"
-          placeholder="Write your weight..."
+          placeholder="Peso..."
           onBlur={handleBlur}
           onChange={handleChange}
           value={form.weight}
@@ -182,7 +169,7 @@ const CreatePokemon = () => {
         <input
           type="text"
           name="img"
-          placeholder="Write your url/image..."
+          placeholder="Imagen..."
           onBlur={handleBlur}
           onChange={handleChange}
           value={form.img}
@@ -214,14 +201,16 @@ const CreatePokemon = () => {
                       <option value="ice">Ice</option>
                     </select>
             </div>
+         {/* aca creamos el boton para enviar los datos del pokemon creado y que se guarden en la base de datos */}
 
-
-        <input className="enviar" type="submit" value="Listo" />
+        <button type="submit" className="enviar2"> Crear </button>
+        {/* <input className="enviar2" type="submit" value="Listo" /> */}
       </form>
       {loading && <Loader />}
       {response && (
         <Message msg="The pokemon has been created successfully" bgColor="#198754" />
       )}
+       <Link to="/Home"><button className="btn2-create">Home</button></Link>
       </div>
     </div>
   );

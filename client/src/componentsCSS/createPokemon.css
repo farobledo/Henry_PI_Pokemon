@@ -1,7 +1,8 @@
 body{
-  background-image: url("../images/esta.webp");
+  background-image: url("https://i.pinimg.com/originals/e2/4b/66/e24b66b6bcf22291cc6e5468b0656d02.jpg");
 }
 .form {
+   
   display: flex;
   flex-direction: column;
   width: 30vw;
@@ -13,7 +14,7 @@ body{
   
 }
 .form-container {
-  
+
   height: 500px;
 }
 .form h1{
@@ -22,7 +23,8 @@ body{
   padding-top: 2px;
   margin-left: 130%;
 }
-.form-container form{
+.form-container form {
+ 
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -42,27 +44,30 @@ body{
 .input-stats input {
   height: 20px;
   margin-bottom: 0;
+  background-image: url(../images/picachu2.jpg);
+ 
 }
 
 .input-stats p {
   align-content: flex-end;
  margin-left: 20px;
  margin-top: 0;
-  color: rgb(247, 0, 0);
+ color: #f5f5f5;
 
   width: 500px;
   
 }
-.enviar {
-  color: blanchedalmond;
-  width: 200px;
-  height: 100px;
-  margin-left: 110px;
-  background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
-  font-size: 20px;
+.enviar2 {
+  margin-top: 70px;
+  width: 180px;
+  height: 50px;
+  background-image: url(../images/picachu2.jpg);
   border: none;
-  border-radius: 4px;
+  border-radius: 10px;
+  transition: 0.5s;
   cursor: pointer;
+  margin-left: 100px;
+  color: #f5f5f5;
 }
 .enviar:hover {
   background-image: linear-gradient(to top, #505285 0%, #585e92 12%, #65689f 25%, #7474b0 37%, #7e7ebb 50%, #8389c7 62%, #9795d4 75%, #a2a1dc 87%, #b5aee4 100%);
@@ -70,4 +75,17 @@ body{
 .dd {
   cursor: pointer;
   display: flex;
+  color: #f5f5f5;
+}
+.btn2-create{
+  margin-top: -70px;
+  width: 180px;
+  height: 50px;
+  background-image: url(../images/picachu2.jpg);
+  border: none;
+  border-radius: 10px;
+  transition: 0.5s;
+  cursor: pointer;
+  margin-left: 300px;
+  color: #f5f5f5;
 }

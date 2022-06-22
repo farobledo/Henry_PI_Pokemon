@@ -18,6 +18,8 @@ export default function Nav() {
         <img src={pokeLogo} alt="" />
         {/* creamos una ruta para ir la landing page */}
         <Link to="/"><button className='btn-create'>LandingPage</button></Link>
+        {/* crearemos un button para refrecar la lista de pokemons al inicio de la pagina */}
+        <button className='btn-create' onClick={handleClick}>Refrescar</button>
      
     <button className='buttonNav' onClick={e=>{handleClick(e)}}>
       <span>Load Pokemons</span>

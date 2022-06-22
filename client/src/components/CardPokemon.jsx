@@ -13,7 +13,7 @@ export default function CardPokemon({id,img,name,type}) {
        <img src={img} alt="" />
        <div className='card-text'>
        <h2>{name.toUpperCase()}</h2>
-       <div className='type-text'>
+       <div className='type-text'> 
          {type[0].name?<h4>{type[0].name}</h4>:type && type.length === 2 ? (
           <p>TYPE <br /> <hr /> {type[0].toUpperCase() + " - " + type[1].toUpperCase()}</p>
         ) : type && type.length > 0 ? (

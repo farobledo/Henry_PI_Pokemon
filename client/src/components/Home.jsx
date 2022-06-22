@@ -25,7 +25,7 @@ export default function Home () {
     const [pokesByPage] = useState(12);
     const lastPoke = currentPage * pokesByPage;
     const firstPoke = lastPoke - pokesByPage;
-    console.log(pokemons)
+    // console.log(pokemons)
     const currentPokesInPage= pokemons.slice(firstPoke, lastPoke)
     
     const pagination = (pagNumber)=>{

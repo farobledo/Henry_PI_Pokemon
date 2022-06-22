@@ -45,10 +45,11 @@ box-shadow: 18px 21px 25px -16px rgb(255, 255, 255);
     margin-top: 2px;
 }
 .btn-detailes button {
+    color: rgb(0, 0, 0);
     border: none;
     width: 100px;
     height: 40px;
-    background-color: #fdfdfd;
+  
     transition: 0.5s;
     border-radius: 4px;
     cursor: pointer;
